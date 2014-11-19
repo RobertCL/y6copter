@@ -13,8 +13,8 @@ module propellor()
 	color(Grey50) {
 		linear_extrude(6)
 		difference() {
-			circle(r=8/2);
-			circle(r=4/2);
+			circle(r=10/2);
+			circle(r=5/2);
 		}
 
 		// Blades
