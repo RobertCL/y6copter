@@ -1,5 +1,7 @@
 include <../config/config.scad>
-
-motor();
 
-//apm();
+//motor();
+
+//apm();
+
+PcbPins(numPins = 10, a=90);
