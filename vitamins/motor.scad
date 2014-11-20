@@ -40,7 +40,9 @@ module motor()
 		}
 
 		// Prop spinner
-		translate([0,0,height+6+6])
+		translate([0,0,height+6+6]) {
+			cylinder(r=16/2, h=1);
 			cylinder(r1=16/2, r2=1, h=20);
+		}
 	}
 }
