@@ -8,7 +8,7 @@ module apm()
 	}
 
 	width = 45;
-	length = 70;
+	length = 60;
 
 	linear_extrude(2)
 	difference() {
@@ -20,4 +20,19 @@ module apm()
 			translate([width / 2 - 2.5, length / 2 - 2.5])
 				circle(r=1.5);
 	}
+
+	// Back servo pin rail
+	translate([-width/2 + 2, 10, 2])
+		PcbPins(cols=10, rows=3, a=-90);
+
+	// Servo In
+	translate([-8, -length/2+3, 3])
+	rotate(a=90, v=[1,0,0])
+		PcbPins(cols=8, rows=3);
+
+	// Motor Out
+	translate([-8, length/2-3, 3])
+	mirror([0,1,0])
+	rotate(a=90, v=[1,0,0])
+		PcbPins(cols=8, rows=3);
 }

@@ -2,6 +2,6 @@ include <../config/config.scad>
 
 //motor();
 
-//apm();
-
-PcbPins(numPins = 10, a=90);
+apm();
+
+//PcbPins(cols = 10, rows = 2);
