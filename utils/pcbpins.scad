@@ -1,4 +1,4 @@
-module PcbPins(numPins = 4, a = 0, spacers = true)
+module PcbPins(cols = 4, rows = 1, a = 0, spacers = true)
 {
     // Standard PCB header pin
     pcbholepitch        = 2.54;         // spacing of PCB holes
@@ -10,8 +10,9 @@ module PcbPins(numPins = 4, a = 0, spacers = true)
     spacerheight        = 2.25;         // height of breakaway pin frame
 
 	rotate(a = a)
-	for (i = [0 : numPins - 1]) {
-		translate([i * pcbholepitch, 0, 0]) {
+	for (j = [0 : rows - 1])
+	for (i = [0 : cols - 1]) {
+		translate([i * pcbholepitch, j * pcbholepitch, 0]) {
 			// Header Pins
 			color("white")
 			translate([0, 0, -pinoffset])
