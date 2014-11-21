@@ -9,3 +9,4 @@
 include <../vitamins/apm.scad>
 include <../vitamins/motor.scad>
 include <../vitamins/propellor.scad>
+include <../vitamins/rcreceiver.scad>
