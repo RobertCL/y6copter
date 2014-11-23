@@ -40,3 +40,4 @@ include <../utils/pcbpins.scad>
 include <colors.scad>
 include <printedparts.scad>
 include <vitamins.scad>
+include <assemblies.scad>
