@@ -1,6 +1,6 @@
-rcReceiver_width = 30.5;
-rcReceiver_length = 45;
-rcReceiver_height = 11;
+rcReceiver_width = 35;
+rcReceiver_length = 52;
+rcReceiver_height = 15.5;
 
 Con_RcReceiver_FrontLeft = DefCon;
 
@@ -14,7 +14,9 @@ module rcReceiver()
 	l = rcReceiver_length;
 	h = rcReceiver_height;
 
-	color([0.5, 0.5, 0.5, 0.6]) {
+	color([0.5, 0.5, 0.5]) {
+
+		// Main body
 		linear_extrude(h)
 		difference() {
 			square([w,l]);
@@ -23,18 +25,26 @@ module rcReceiver()
 				square([w-4, 10]);
 		}
 
-		translate([2,0,0])
-		{
-		cube([w-4, 10, 2]);
-		translate([0,0,h-2])
-			cube([w-4, 10, 2]);
-			}
+		// Pin surround
+		translate([2,0,0]) {
+			cube([w-4, 10, 4]);
+			translate([0,0,h-3])
+				cube([w-4, 10, 3]);
+			translate([14,0,0])
+				cube([1.5,10,h]);
+		}
+
+		// Arial Exit
+		translate([w/2, l, h/2])
+		rotate(a=-90, v=[1,0,0])
+			cylinder(r=1, h=1);
 	}
 
-	translate([4, 8, 3])
+	// Pins
+	translate([4, 8, 5.5])
 	rotate(a=90, v=[1,0,0]) {
 		PcbPins(cols=5, rows=3);
-		translate([2.54*5 + 2, 0, 0])
-			PcbPins(cols=4, rows=3);
+		translate([2.54*5 + 1.5 + 1.75, 0, 0])
+			PcbPins(cols=5, rows=3);
 	}
 }
