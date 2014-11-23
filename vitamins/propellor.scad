@@ -10,7 +10,7 @@ module propellor()
 	}
 
 	// Hub
-	color(Grey50) {
+	color(Grey20) {
 		linear_extrude(8)
 		difference() {
 			circle(r=15/2);

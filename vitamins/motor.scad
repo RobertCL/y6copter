@@ -13,7 +13,7 @@ module motor()
 		connector(Con_Motor_Shaft);
 	}
 
-	color(MetalColor) {
+	color(Grey50) {
 		// Body
 		cylinder(r1=(diameter-2)/2, r2=diameter/2, h=3.5);
 		translate([0,0,3.5])
@@ -23,7 +23,9 @@ module motor()
 
 		translate([0,0,height])
 			cylinder(r=5, h=1.5);
+	}
 
+	color(Grey90) {
 		// Prop Mount
 		translate([0,0,height]) {
 			linear_extrude(6)
