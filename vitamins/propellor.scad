@@ -11,10 +11,10 @@ module propellor()
 
 	// Hub
 	color(Grey50) {
-		linear_extrude(6)
+		linear_extrude(8)
 		difference() {
-			circle(r=10/2);
-			circle(r=5/2);
+			circle(r=15/2);
+			circle(r=6/2);
 		}
 
 		// Blades
@@ -31,15 +31,18 @@ module blade()
 	linear_extrude(1)
 	difference() {
 		hull() {
-			circle(r=8/2);
+			circle(r=11/2);
 
 			// End
 			translate([5*25.4 - 3,0,0])
-				circle(r=3/2);
+				circle(r=13/2);
+
+			translate([26,0,0])
+				circle(r=23/2);
 
 			// Center
 			translate([70,0,0])
-				circle(r=12/2);
+				circle(r=30/2);
 		}
 
 		circle(r=8/2);

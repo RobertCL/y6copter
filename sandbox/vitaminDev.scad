@@ -2,8 +2,7 @@ include <../config/config.scad>
 
 //PcbPins(cols = 10, rows = 2);
 
-//motor();
-apm();
+//motor();apm();
 //rcReceiver();
 //battery();
 
