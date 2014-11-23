@@ -32,11 +32,11 @@ DebugCoordinateFrames = 1; 		// set to 1 to debug, set to 0 for production
 // Libraries
 include <../utils/obiscad/vector.scad>
 include <../utils/obiscad/attach.scad>
+include <../utils/df13connector.scad>
 include <../utils/pcbpins.scad>
 
 
 // Include all other configuration files
-
 include <colors.scad>
 include <printedparts.scad>
 include <vitamins.scad>
