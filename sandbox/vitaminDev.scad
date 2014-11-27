@@ -6,5 +6,5 @@ include <../config/config.scad>
 //apm();
 //rcReceiver();
 //battery();
-
+powerModule();
 
