@@ -22,8 +22,17 @@ translate([0,0,15]) {
 	translate([-3,-70])
 	rotate(a=180, v=[0,0,1])
 		rcReceiver();
-
 }
+
+translate([25, 0, 10]) {
+    fpvTransmitter();
+
+    translate([0, 0, 17])
+        minimOsd();
+}
+
+translate([10, -40, 5])
+    powerModule();
 
 translate([0,0,-20])
 rotate(a=90, v=[0,0,1])
