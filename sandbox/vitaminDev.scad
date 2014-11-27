@@ -6,6 +6,7 @@ include <../config/config.scad>
 //apm();
 //rcReceiver();
 //battery();
-//powerModule();
-minimOsd();
-
+//powerModule();
+//minimOsd();
+//fpvTransmitter();
+//cloverleaf();

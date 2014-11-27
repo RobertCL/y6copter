@@ -9,6 +9,7 @@
 include <../vitamins/3drradio.scad>
 include <../vitamins/apm.scad>
 include <../vitamins/battery.scad>
+include <../vitamins/fpvtransmitter.scad>
 include <../vitamins/minimosd.scad>
 include <../vitamins/motor.scad>
 include <../vitamins/powermodule.scad>
