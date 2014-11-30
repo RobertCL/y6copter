@@ -2,7 +2,8 @@
 module powerModule()
 {
 	// Board
-	cube([21.5, 25, 1.6]);
+	color(PcbColor)
+		cube([21.5, 25, 1.6]);
 
 	// Connector to APM
 	translate([2, 6.5, -3.2])

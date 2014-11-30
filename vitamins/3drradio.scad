@@ -1,6 +1,6 @@
 module 3drRadio()
 {
-	color("green")
+	color(PcbColor)
 		cube([35, 3.75, 17]);
 
 	color("gold")

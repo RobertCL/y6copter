@@ -34,8 +34,8 @@ BeltColor 						= "white";
 PolycarbonateColor 			 	= [1,0.8,0.5,0.5];
 SiliconeColor 					= [1,0.8,0.8,0.8];
 WoodColor 						= "orange";
-
 PlasticColor 					= "orange";
+PcbColor						= "green";
 
 // Additional Plastic colours to differentiate sub-assemblies
 Level2PlasticColor				= [1, 0.5, 0];

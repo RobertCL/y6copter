@@ -11,6 +11,7 @@ module apm()
 	}
 
 	// Board
+	color(PcbColor)
 	linear_extrude(2)
 	difference() {
 		square([apm_width, apm_length], true);

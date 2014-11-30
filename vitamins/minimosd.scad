@@ -1,7 +1,8 @@
 
 module minimOsd()
 {
-	cube([18, 43.5, 1.6]);
+	color(PcbColor)
+		cube([18, 43.5, 1.6]);
 
 	// Heatsink
 	color("gold")
