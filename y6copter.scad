@@ -1,6 +1,6 @@
 include <config/config.scad>
 
-
+// Arms
 for (ang = [30, -90, 150])
 rotate(a= ang, v=[0,0,1]) {
 
@@ -12,6 +12,9 @@ rotate(a= ang, v=[0,0,1]) {
 			Motor_Assembly();
 	}
 }
+
+translate([0,0,-3])
+    BasePlate();
 
 translate([0,0,15]) {
 	apm();
