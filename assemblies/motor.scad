@@ -1,6 +1,6 @@
 module Motor_Assembly()
 {
-	translate([0,0,5]) {
+	translate([0,0,10.5]) {
 		motor();
 
 		attach(Con_Motor_Shaft, Con_Propellor)
@@ -9,7 +9,7 @@ module Motor_Assembly()
 	}
 
 	rotate(a=180, v=[1,0,0])
-	translate([0,0,5]) {
+	translate([0,0,10.5]) {
 		motor();
 		
 		attach(Con_Motor_Shaft, Con_Propellor)

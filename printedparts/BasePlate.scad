@@ -6,10 +6,9 @@ module BasePlate()
 		mirror([i,0,0])
 		rotate(a=i * 60, v=[0, 0, 1])
 		translate([0, 80, 0])
-			circle(r=10);
+			circle(r=15);
 
 		translate([0, -120, 0])
 			circle(r=15);
 	}
-
 }
