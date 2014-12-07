@@ -24,18 +24,28 @@ if (!folded) {
 			Arm_Assembly(ArmTypeFront);
 }
 
-translate([0,0,-5])
+translate([0,0,-5]) {
     BasePlate();
+
+    translate([-50,-60, 5])
+	rcReceiver();
+    
+    translate([17, -10, 15])
+    rotate([0, 90, 0])
+    rotate([0, 0, -90])
+        3drRadio();
+    
+    translate([25, -40, -5])
+        powerModule();
+}
+
 
 translate([0,0,25]) {
 	apm();
 
-	translate([3,-120])
+	*translate([3,-120])
 		3drRadio_Assembly();
-
-	translate([-3,-70])
-	rotate(a=180, v=[0,0,1])
-		rcReceiver();
+        // TODO: GPS
 
 	translate([25, 0, 0]) {
 		fpvTransmitter();
@@ -44,11 +54,6 @@ translate([0,0,25]) {
 			minimOsd();
 	}
 }
-
-
-
-translate([10, -40, 10.5])
-    powerModule();
 
 translate([0,0,-20])
 rotate(a=90, v=[0,0,1])
