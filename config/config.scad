@@ -23,6 +23,9 @@ layers = Layers;
 4perim = 4Perim;
 
 
+// Hole diameters
+3mmHoleDia = 3.5;
+
 // Debugging
 
 DebugConnectors = 1;  			// set to 1 to debug, set to 0 for production
