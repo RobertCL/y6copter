@@ -1,18 +1,47 @@
 include <config/config.scad>
 
-// Arms
-for (ang = [30, -90, 150])
-rotate(a= ang, v=[0,0,1]) {
+folded = true;
 
+// Rear Arm
+for (ang = [-90])
+rotate(a= ang, v=[0,0,1]) {
 	translate([0,-10.5,0]) {
 		color(WoodColor)
-			cube([300, 21, 21]);
+			cube([325, 21, 21]);
 
-		translate([285, 10.5, 10.5])
+		translate([310, 10.5, 10.5])
 			Motor_Assembly();
 	}
 }
 
+// Front arms
+if (!folded) {
+	for (ang = [30, 150]) {
+		rotate([0,0,ang])
+		translate([0,-10.5,0]) {
+			color(WoodColor)
+				cube([325, 21, 21]);
+
+			translate([310, 10.5, 10.5])
+				Motor_Assembly();
+		}
+	}
+} else { 
+	for (angv = [[30, -110], [150, 110]]) {
+		translate([BasePlateFrontArmLength * cos(angv[0]), BasePlateFrontArmLength * sin(angv[0]), 0])
+		rotate([0,0,angv[1]])
+		translate([-BasePlateFrontArmLength * cos(angv[0]), -BasePlateFrontArmLength * sin(angv[0]), 0]) {
+			rotate([0,0,angv[0]])
+			translate([0,-10.5,0]) {
+				color(WoodColor)
+					cube([325, 21, 21]);
+
+				translate([310, 10.5, 10.5])
+					Motor_Assembly();
+			}
+		}
+	}
+}
 
 translate([0,0,-3])
     BasePlate();
