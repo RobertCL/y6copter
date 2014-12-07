@@ -38,6 +38,7 @@ include <../utils/pcbpins.scad>
 
 // Include all other configuration files
 include <colors.scad>
+include <copterparameters.scad>
 include <printedparts.scad>
 include <vitamins.scad>
 include <assemblies.scad>

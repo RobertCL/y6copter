@@ -1,15 +1,15 @@
 include <config/config.scad>
 
-folded = true;
+folded = false;
 
 // Rear Arm
 for (ang = [-90])
 rotate(a= ang, v=[0,0,1]) {
-	translate([0,-10.5,0]) {
+	translate([0,-ArmDia/2,0]) {
 		color(WoodColor)
-			cube([325, 21, 21]);
+			cube([ArmLength, ArmDia, ArmDia]);
 
-		translate([310, 10.5, 10.5])
+		translate([ArmLength-15, ArmDia/2, ArmDia/2])
 			Motor_Assembly();
 	}
 }
@@ -18,11 +18,11 @@ rotate(a= ang, v=[0,0,1]) {
 if (!folded) {
 	for (ang = [30, 150]) {
 		rotate([0,0,ang])
-		translate([0,-10.5,0]) {
+		translate([0,-ArmDia/2,0]) {
 			color(WoodColor)
-				cube([325, 21, 21]);
+				cube([ArmLength, ArmDia, ArmDia]);
 
-			translate([310, 10.5, 10.5])
+			translate([ArmLength-15, ArmDia/2, ArmDia/2])
 				Motor_Assembly();
 		}
 	}
@@ -34,9 +34,9 @@ if (!folded) {
 			rotate([0,0,angv[0]])
 			translate([0,-10.5,0]) {
 				color(WoodColor)
-					cube([325, 21, 21]);
+					cube([ArmLength, ArmDia, ArmDia]);
 
-				translate([310, 10.5, 10.5])
+				translate([ArmLength-15, ArmDia/2, ArmDia/2])
 					Motor_Assembly();
 			}
 		}
