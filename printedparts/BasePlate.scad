@@ -47,19 +47,16 @@ module BasePlate()
 		circle(r=8);
 	}
 
-	// Rear arm grippers
+	// Arm grips
 	for (i=[0,1])
-	mirror([i,0,0])
-	translate([ArmDia/2, -BasePlateBackArmLength + 10, 0])
-		cube([4, BasePlateBackArmLength - 30, 10]);
+	mirror([i, 0, 0]) {
+		// Rear arm gripper
+		translate([ArmDia/2, -BasePlateBackArmLength + 10, 0])
+			cube([4, BasePlateBackArmLength - 16, 10]);
+		rotate([0, 0, 30])
 
-	// Front arm grippers
-	for(ang = [30, 150])
-	rotate([0, 0, ang])
-	for (i=[0,1])
-	mirror([0,i,0])
-	translate([20, -ArmDia/2 - 4, 0])
-		cube([BasePlateFrontArmLength - 30, 4 , 10]);
-
-
+		// Front arm stops
+		translate([6, -ArmDia/2 - 4, 0])
+			cube([BasePlateFrontArmLength - 25, 4 , 10]);
+	}
 }
