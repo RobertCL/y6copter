@@ -7,4 +7,5 @@
 // Order alphabetically - printed parts should not have inter-dependencies!
 
 include <../printedparts/baseplate.scad>
+include <../printedparts/leg.scad>
 include <../printedparts/topplate.scad>
