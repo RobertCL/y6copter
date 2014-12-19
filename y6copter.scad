@@ -1,8 +1,10 @@
 include <config/config.scad>
 
 folded = false;
-
-Arms_Assembly(folded);
+
+
+Arms_Assembly(folded);
+
 
 translate([0,0,-5]) {
     BasePlate();
