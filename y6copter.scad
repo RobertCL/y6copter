@@ -38,7 +38,23 @@ translate([0, 0, 21]) {
 	}
 }
 
+// Legs
+translate([0, -51, -8])
+rotate([90, 0, 0])
+    Leg();
 
-translate([0,0,-20])
+translate([0, 59, -8])
+rotate([90, 0, 0])
+    Leg();
+
+// Leg Dowels
+color(WoodColor)
+for (i = [0,1])
+mirror([i, 0, 0])
+translate([70, 100, -83])
+rotate([90, 0, 0])
+    cylinder(d=10, h=200)
+
+translate([0,0,-30])
 rotate(a=90, v=[0,0,1])
 	battery();
