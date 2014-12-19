@@ -39,21 +39,23 @@ translate([0,0,-5]) {
         powerModule();
 }
 
+translate([0, 0, 21]) {
+    TopPlate();
+	
+	translate([0, 0, 5]) {
+		apm();
 
-translate([0,0,25]) {
-	apm();
+		translate([25, 0, 0]) {
+			fpvTransmitter();
 
-	*translate([3,-120])
-		3drRadio_Assembly();
+			translate([0, 0, 17])
+				minimOsd();
+		}
+		
         // TODO: GPS
-
-	translate([25, 0, 0]) {
-		fpvTransmitter();
-
-		translate([0, 0, 17])
-			minimOsd();
 	}
 }
+
 
 translate([0,0,-20])
 rotate(a=90, v=[0,0,1])

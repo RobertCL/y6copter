@@ -31,3 +31,6 @@ if (arms) {
 
 translate([0,0,-5])
     BasePlate();
+
+translate([0,0,21])
+    TopPlate();

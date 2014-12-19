@@ -1,7 +1,7 @@
-BasePlateFrontArmLength = 60;
-BasePlateBackArmLength = 100;
+TopPlateFrontArmLength = 60;
+TopPlateBackArmLength = 100;
 
-module BasePlate()
+module TopPlate()
 {
 	linear_extrude(5)
 	difference() {
@@ -9,10 +9,10 @@ module BasePlate()
 			for (i=[1, -1])
 			mirror([i,0,0])
 			rotate(a=i * 60, v=[0, 0, 1])
-			translate([0, BasePlateFrontArmLength, 0])
+			translate([0, TopPlateFrontArmLength, 0])
 				circle(r=15);
 
-			translate([0, -BasePlateBackArmLength, 0])
+			translate([0, -TopPlateBackArmLength, 0])
 				circle(r=15);
 
 			translate([0, 60, 0])
@@ -29,11 +29,11 @@ module BasePlate()
 		for (i=[1, -1])
 		mirror([i,0,0])
 		rotate(a=i * 60, v=[0, 0, 1])
-		translate([0, BasePlateFrontArmLength, 0])
+		translate([0, TopPlateFrontArmLength, 0])
 			circle(d=3mmHoleDia);
 
 		// Rear outer hole
-		translate([0, -BasePlateBackArmLength, 0])
+		translate([0, -TopPlateBackArmLength, 0])
 			circle(d=3mmHoleDia);
 
 		// Round off sides
@@ -48,18 +48,5 @@ module BasePlate()
 
 		// Central Hole
 		circle(r=8);
-	}
-
-	// Arm grips
-	for (i=[0,1])
-	mirror([i, 0, 0]) {
-		// Rear arm gripper
-		translate([ArmDia/2, -BasePlateBackArmLength + 10, 0])
-			cube([4, BasePlateBackArmLength - 16, 10]);
-		rotate([0, 0, 30])
-
-		// Front arm stops
-		translate([6, -ArmDia/2 - 4, 0])
-			cube([BasePlateFrontArmLength - 25, 4 , 10]);
 	}
 }
