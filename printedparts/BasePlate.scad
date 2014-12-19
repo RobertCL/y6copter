@@ -36,6 +36,17 @@ module BasePlate()
 		translate([0, -BasePlateBackArmLength, 0])
 			circle(d=3mmHoleDia);
 
+			
+		// Leg Mounting holes
+		for (i=[0, 1])
+		mirror([i, 0, 0])
+		translate([18, -55, 0])
+			circle(d=3mmHoleDia);
+		for (i=[0, 1])
+		mirror([i, 0, 0])
+		translate([18, 55, 0])
+			circle(d=3mmHoleDia);
+
 		// Round off sides
 		for (i=[0,1])
 			mirror([i, 0, 0])
