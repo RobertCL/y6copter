@@ -1,15 +1,16 @@
 
 module Leg()
 {
-	ro = 75;
-	ri = 65;
+	ro = 100;
+	ri = 95;
 	rd = ro - ri;
-	roff = 69;
+	roff = 94;
 
 	difference() {
 
 		// Leg arches
 		linear_extrude(8) {
+			square([50, 5], center=true);
 			translate([0, -roff, 0])
 			difference() {
 				circle(r=ro);

@@ -24,6 +24,6 @@ rotate([90, 0, 0])
 
 
 // Ground
-*color("Green")
-translate([0, 0, -80])
+color("Green")
+translate([0, 0, -120])
     cube([1000, 1000, 5], center = true);
