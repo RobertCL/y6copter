@@ -1,14 +1,14 @@
 include <config/config.scad>
 
-// Animate props. 0=off, 1=on
-anim_props = 0;
-// Fold arms? true / false
-folded = false; 
-// Animate folding 0=off, 1=on
-anim_fold = 0;  
-// Percentage by which arm folds by (0..1 = 0..100%)
-foldedpc = folded ? 1 : anim_fold * $t;
-
+// Animate props. 0=off, 1=on
+anim_props = 0;
+// Fold arms? true / false
+folded = false; 
+// Animate folding 0=off, 1=on
+anim_fold = 0;  
+// Percentage by which arm folds by (0..1 = 0..100%)
+foldedpc = folded ? 1 : anim_fold * $t;
+
 
 Arms_Assembly(foldedpc);
 
