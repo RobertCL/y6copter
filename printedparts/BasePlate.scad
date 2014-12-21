@@ -64,11 +64,13 @@ module BasePlate()
 			circle(r=8);
 		}
 
-		// Leg mount holes nut insets
+		// Leg mount holes insets
 		for (i=[0, 1])
 		mirror([i, 0, 0])
-		translate([18, 55, 2.5])
-			cylinder(d=6.3, h=3, $fn=6);
+		translate([18, 55, 3])
+			cylinder(d=6, h=2+eta);
+		translate([0, 55, 3])
+			cylinder(d=6, h=2+eta);
 	}
 
 	// Arm grips
