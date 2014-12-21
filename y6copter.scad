@@ -1,6 +1,6 @@
 include <config/config.scad>
 
-folded = false;
+folded = 0;
 
 
 Arms_Assembly(folded);

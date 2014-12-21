@@ -30,6 +30,9 @@ module Leg()
 		translate([18, 4, 4])
 		rotate([90, 0, 0])
 			cylinder(d=3mmHoleDia, h=12);
+		translate([0, 4, 4])
+		rotate([90, 0, 0])
+			cylinder(d=3mmHoleDia, h=12);
 	}
 
 	// Dowel holes

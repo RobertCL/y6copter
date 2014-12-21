@@ -24,7 +24,7 @@ module Arm_Assembly(ArmType)
 		Motor_Assembly();
 }
 
-module Arms_Assembly(folded = false)
+module Arms_Assembly(folded = 0)
 {
 	// Rear Arm
 	for (ang = [-90])
@@ -39,7 +39,7 @@ module Arms_Assembly(folded = false)
 			translate([0,-ArmDia/2,0])
 				Arm_Assembly(ArmTypeFront);
 	} else { 
-		for (angv = [[30, -110], [150, 110]])
+		for (angv = [[30, -110 * folded], [150, 110 * folded]])
 			translate([BasePlateFrontArmLength * cos(angv[0]), BasePlateFrontArmLength * sin(angv[0]), 0])
 			rotate([0,0,angv[1]])
 			translate([-BasePlateFrontArmLength * cos(angv[0]), -BasePlateFrontArmLength * sin(angv[0]), 0])
