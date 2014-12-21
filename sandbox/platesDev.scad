@@ -3,9 +3,9 @@ include <../config/config.scad>
 $fn = 200;
 
 arms = true;
-folded = 0;
+foldedpc = 0;
 
-if (arms) Arms_Assembly(folded);
+if (arms) Arms_Assembly(foldedpc);
 
 
 translate([0,0,-5])

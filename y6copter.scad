@@ -1,10 +1,16 @@
 include <config/config.scad>
 
-folded = 0;
+// Animate props. 0=off, 1=on
+anim_props = 0;
+// Fold arms? true / false
+folded = false; 
+// Animate folding 0=off, 1=on
+anim_fold = 0;  
+// Percentage by which arm folds by (0..1 = 0..100%)
+foldedpc = folded ? 1 : anim_fold * $t;
+
 
-
-Arms_Assembly(folded);
-
+Arms_Assembly(foldedpc);
 
 translate([0,0,-5]) {
     BasePlate();

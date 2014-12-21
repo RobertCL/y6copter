@@ -4,7 +4,7 @@ module Motor_Assembly()
 		motor();
 
 		attach(Con_Motor_Shaft, Con_Propellor)
-			rotate(a=360*$t, v=[0,0,1])
+			rotate(a=360*$t*anim_props, v=[0,0,1])
 				propellor();
 	}
 
@@ -13,7 +13,7 @@ module Motor_Assembly()
 		motor();
 		
 		attach(Con_Motor_Shaft, Con_Propellor)
-			rotate(a=360*$t, v=[0,0,1])
+			rotate(a=360*$t*anim_props, v=[0,0,1])
 			propellor();
 	}
 }
