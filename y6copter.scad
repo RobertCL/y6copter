@@ -57,7 +57,7 @@ rotate([90, 0, 0])
 color(WoodColor)
 for (i = [0,1])
 mirror([i, 0, 0])
-translate([97.5, 100, -108])
+translate([95, 100, -108])
 rotate([90, 0, 0])
     cylinder(d=10, h=200);
 
