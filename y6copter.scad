@@ -22,9 +22,6 @@ translate([0,0,-5]) {
     rotate([0, 90, 0])
     rotate([0, 0, -90])
         3drRadio();
-    
-    translate([25, -40, -5])
-        powerModule();
 }
 
 translate([0, 0, 21]) {
@@ -61,6 +58,15 @@ translate([95, 100, -108])
 rotate([90, 0, 0])
     cylinder(d=10, h=200);
 
-translate([0,0,-30])
+// Battery Holder
+translate([0,0,-21])
+    BatteryHolderPlate();
+
+translate([25/2, -47+15+3, 11-21])
+rotate([0, 180, 0])
+rotate([0, 0, -90])
+    powerModule();
+
+translate([0,0,-37])
 rotate(a=90, v=[0,0,1])
 	battery();

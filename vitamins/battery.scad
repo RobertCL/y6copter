@@ -1,16 +1,16 @@
 Con_Battery_FrontLeft = [ [-162/2, -46/2, -29/2], [0, 0, 1], 0, 0, 0 ];;
 
+Battery_Length = 155;
+Battery_Width = 45;
+Battery_Height = 31;
+
 module battery()
 {
 	if (DebugCoordinateFrames)  frame();
 	if (DebugConnectors) {
 		connector(Con_Battery_FrontLeft);
 	}
-
-	l = 162;
-	w = 46;
-	h = 29;
-
+	
 	c = 2;
 
 	color("yellow")
@@ -19,6 +19,6 @@ module battery()
 		mirror([x,0,0])
 		mirror([0,y,0])
 		mirror([0,0,z])
-		translate([l/2 - c, w/2 - c, h/2 - c])
+		translate([Battery_Length/2 - c, Battery_Width/2 - c, Battery_Height/2 - c])
 			sphere(r=c);
 }
