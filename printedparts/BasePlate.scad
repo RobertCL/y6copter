@@ -83,8 +83,8 @@ module BasePlate()
 		for (i=[0, 1], j=[0, 1])
 		mirror([0, j, 0])
 		mirror([i, 0, 0])
-		translate([18, 55, 3])
-			cylinder(d=6, h=2+eta);
+		translate([18, 55, 4])
+			cylinder(d=6, h=1+eta);
 	}
 
 	// Arm grips
