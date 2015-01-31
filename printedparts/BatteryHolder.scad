@@ -51,23 +51,32 @@ module BatteryHolderPlate()
 				square([Battery_Width-30, 14], center=true);
 		}
 
-		// Leg mount holes insets
+		// Leg mount hole nut insets
 		for (i=[0, 1], j=[0, 1])
 		mirror([0, j, 0])
 		mirror([i, 0, 0])
 		translate([18, 55, -eta])
-			cylinder(d=6, h=2.5+eta, $fn=6);
+			cylinder(d=6.5, h=2.5+eta, $fn=6);
 	}
 
 	// Power module holder
-	translate([-(25.5+6)/2, -47+15+3 ,5-eta])
-	linear_extrude(6) {
+	translate([-(25.5+6)/2, -47+15+3 ,5-eta]) {
+		linear_extrude(6.5) {
 	
-		square([25.5 + 6, 3]);
-		translate([0, -15])
-			square([3, 15 + 3]);
-		translate([25.5 + 3, -15])
-			square([3, 15 + 3]);
+			square([25.5 + 6, 3]);
+			translate([0, -15])
+				square([3, 15 + 3]);
+			translate([25.5 + 3, -15])
+				square([3, 15 + 3]);
+		}
+
+		// Corner holders
+		translate([0, 3, 6.5-eta])
+		linear_extrude(2*Layers)
+			polygon([[0,0], [9,0], [0,-9]]);
+		translate([25.5+6, 3, 6.5-eta])
+		linear_extrude(2*Layers)
+			polygon([[0,0], [-9,0], [0,-9]]);
 	}
 
 	// End Arcs
@@ -77,7 +86,7 @@ module BatteryHolderPlate()
 		intersection() {
 			translate([0, -51, -85 +3])
 			rotate([90, 0, 0])
-				cylinder(r=90, h=8);
+				cylinder(r=90, h=8, $fn=200);
 
 			translate([-Battery_Width/2, -59, 5-eta])
 				cube([Battery_Width, 8, 5]);
