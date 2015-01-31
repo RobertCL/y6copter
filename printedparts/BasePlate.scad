@@ -39,15 +39,10 @@ module BasePlate()
 
 			
 			// Leg Mounting holes
-			for (i=[0, 1])
+			for (i=[0, 1], j=[0, 1])
+			mirror([0, j, 0])
 			mirror([i, 0, 0])
 			translate([18, -55, 0])
-				circle(d=3mmHoleDia);
-			for (i=[0, 1])
-			mirror([i, 0, 0])
-			translate([18, 55, 0])
-				circle(d=3mmHoleDia);
-			translate([0, 55, 0])
 				circle(d=3mmHoleDia);
 
 			// Round off sides
@@ -56,20 +51,15 @@ module BasePlate()
 				translate([215, -110])
 					circle(r=200);
 
-			// Round off front
-			//translate([0, 175])
-			//	circle(r=140);
-
 			// Central Hole
 			circle(r=8);
 		}
 
 		// Leg mount holes insets
-		for (i=[0, 1])
+		for (i=[0, 1], j=[0, 1])
+		mirror([0, j, 0])
 		mirror([i, 0, 0])
 		translate([18, 55, 3])
-			cylinder(d=6, h=2+eta);
-		translate([0, 55, 3])
 			cylinder(d=6, h=2+eta);
 	}
 
