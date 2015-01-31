@@ -15,8 +15,9 @@ Arms_Assembly(foldedpc);
 translate([0,0,-5]) {
     BasePlate();
 
-    translate([-50,-60, 5])
-	rcReceiver();
+    translate([rcReceiver_width/2, 75, 5])
+	rotate([0, 0, 180])
+		rcReceiver();
     
     translate([17, -10, 15])
     rotate([0, 90, 0])

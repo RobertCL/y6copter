@@ -41,7 +41,7 @@ module TopPlate()
 			for (i=[0,1])
 				mirror([i, 0, 0])
 				translate([215, -110])
-					circle(r=200);
+					circle(r=200, $fn=100);
 
 			// Round off front
 			//translate([0, 175])

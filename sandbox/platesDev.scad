@@ -1,8 +1,6 @@
 include <../config/config.scad>
 
-//$fn = 200;
-
-arms = true;
+arms = false;
 foldedpc = 0;
 
 if (arms) Arms_Assembly(foldedpc);
@@ -11,10 +9,15 @@ if (arms) Arms_Assembly(foldedpc);
 translate([0,0,-5])
     BasePlate();
 
-translate([0,0,21])
+*translate([0,0,21])
     TopPlate();
 
-union() {
+
+*translate([rcReceiver_width/2, 75, 0])
+rotate([0, 0, 180])
+	rcReceiver();
+
+*union() {
     translate([0, -51, -8])
     rotate([90, 0, 0])
         Leg();
