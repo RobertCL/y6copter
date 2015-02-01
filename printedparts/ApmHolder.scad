@@ -45,7 +45,7 @@ module ApmHolder()
 			mirror([i, 0, 0])
 			mirror([0, j, 0])
 			translate([-apmHolder_width / 2, -apmHolder_length / 2])
-				square([8, 8]);
+				square([7, 7]);
 
 		}
 				
