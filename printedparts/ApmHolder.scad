@@ -75,33 +75,33 @@ module ApmHolder_Top()
 			circle(d=3mmHoleDia);
 
 		// Left side rail
-		translate([-apm_width/2, -apm_length/2+.2])
+		translate([-apm_width/2, -apm_length/2])
 		translate([0, 5, 0]) {
 			square([9, 5]);
-			square([8, 40]);
+			square([8.5, 40]);
 		}
 
 		// Right side
 		translate([apm_width/2, -apm_length/2]) {
 			// Rail
-			translate([-10, 7, 0])
+			translate([-9.5, 7, 0])
 				square([10, 8]);
 			translate([-3, 15, 0])
-				square([3, 31]);
+				square([3.5, 31]);
 
 			// Led Viewing Hole
-			translate([-10, 2])
+			translate([-9.5, 2])
 				square([4, 4]);
 		}
 
 		// Right Side Front
 		translate([apm_width/2, apm_length/2])
-		translate([-10, -5 - 9])
-			square([4, 9]);
+		translate([-10, -5.5 - 9])
+			square([4, 9.5]);
 
 		// Gps Mount Holes
 		translate([-apm_width/2, -apm_length/2])
-		translate([11, 18.5, 0]) {
+		translate([11.5, 18.5, 0]) {
 			circle(d=3mmHoleDia);
 			translate([23, 0, 0])
 				circle(d=3mmHoleDia);
@@ -136,8 +136,8 @@ module ApmHolder_Top()
 			square([22, 4Perim], center=true);
 
 		// Inputs
-		translate([-4, apmHolder_length/2 - eta - Perim, 0])
-			square([22, 2Perim + 2*eta], center=true);
+		translate([-4.5, apmHolder_length/2 - eta - Perim, 0])
+			square([21, 2Perim + 2*eta], center=true);
 
 		// Usb
 		translate([-apmHolder_width/2, apmHolder_length/2, 0])
