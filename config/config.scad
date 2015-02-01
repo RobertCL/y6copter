@@ -15,12 +15,14 @@ Perim = 0.4;    // perim extrusion width for 0.2 or 0.3 layer height
 Layers = 0.3;
 2Perim = 2*Perim;
 4Perim = 4*Perim;
+6Perim = 6*Perim;
 
 // short-hand
 perim = Perim;
 layers = Layers;
 2perim = 2Perim;
 4perim = 4Perim;
+6perim = 6Perim;
 
 
 // Hole diameters

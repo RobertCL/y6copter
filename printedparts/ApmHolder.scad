@@ -134,7 +134,7 @@ module ApmHolder_Top()
 	difference() {
 		square([apmHolder_width, apmHolder_length], center=true);
 
-		square([apmHolder_width - 4perim, apmHolder_length - 4perim], center=true);
+		square([apmHolder_width - 6perim, apmHolder_length - 6perim], center=true);
 				
 		// Mount holes
 		for (i = [0:1], j = [0:1])
@@ -145,17 +145,24 @@ module ApmHolder_Top()
 
 		// Outputs
 		translate([0, -apmHolder_length/2 + Perim - eta, 0])
-			square([22, 4Perim], center=true);
+			square([22, 6Perim], center=true);
 
 		// Inputs
 		translate([-4.5, apmHolder_length/2 - eta - Perim, 0])
-			square([21, 2Perim + 2*eta], center=true);
+			square([21, 4Perim + 2*eta], center=true);
 
 		// Usb
 		translate([-apmHolder_width/2, apmHolder_length/2, 0])
 		translate([0, -22])
-			square([2Perim, 12]);
+			square([4Perim, 12]);
 	}
+
+	// Usb port additional wall height
+	translate([0,0,6])
+	linear_extrude(2.4+5)
+	translate([-apmHolder_width/2, apmHolder_length/2, 0])
+	translate([0, -22])
+		square([3*Perim, 12]);
 
 	// Barometer Cover
 	translate([-apm_width/2, apm_length/2, 3.5])
