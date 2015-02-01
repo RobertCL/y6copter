@@ -6,6 +6,7 @@
 
 // Order alphabetically - printed parts should not have inter-dependencies!
 
+include <../printedparts/apmholder.scad>
 include <../printedparts/baseplate.scad>
 include <../printedparts/batteryholder.scad>
 include <../printedparts/leg.scad>

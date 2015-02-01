@@ -49,8 +49,14 @@ module TopPlate()
 
 			// Central Hole
 			circle(r=8);
-		}
 
+			// Anti vibration mount holes
+			for (i=[0, 1], j=[0, 1])
+			mirror([i, 0, 0])
+			mirror([0, j, 0])
+			translate([-apmHolder_width/2 + 6.5, -apmHolder_length/2 - 6.5], 0)
+				circle(d=9);
+		}
 
 		// Hole insets
 		// Inner Holes
@@ -67,6 +73,5 @@ module TopPlate()
 		// Rear outer hole
 		translate([0, -TopPlateBackArmLength, 3])
 			cylinder(d=6, h=2+eta);
-
 	}
 }

@@ -3,7 +3,7 @@ include <../config/config.scad>
 translate([0,0,-5])
     BasePlate();
 
-*Arms_Assembly(0);
+Arms_Assembly(0);
 
 translate([0,0,21])
     TopPlate();
@@ -14,16 +14,20 @@ rotate([0, 0, 180])
 	rcReceiver();
 
 translate([0, 0, 21+5]) {
-	apm();
+        translate([0, 0, 12.5]) {
+            ApmHolder();
+            translate([0, 0, 4])
+                apm();
+        }
 
-	*translate([25, 0, 0]) {
+	translate([25, 0, 0]) {
 		fpvTransmitter();
 
 		translate([0, 0, 17])
 			minimOsd();
 		}
 		
-	*translate([-30, 30, 0])
+	translate([-30, 30, 0])
 	rotate([0, 0, -90])
 	rotate([90, 0, 0])
 		3drRadio();
