@@ -18,11 +18,6 @@ translate([0,0,-5]) {
     translate([rcReceiver_width/2, 75, 5])
 	rotate([0, 0, 180])
 		rcReceiver();
-    
-    translate([17, -10, 15])
-    rotate([0, 90, 0])
-    rotate([0, 0, -90])
-        3drRadio();
 }
 
 translate([0, 0, 21]) {
@@ -38,6 +33,11 @@ translate([0, 0, 21]) {
 				minimOsd();
 		}
 		
+		translate([-30, 30, 0])
+		rotate([0, 0, -90])
+		rotate([90, 0, 0])
+			3drRadio();
+
         // TODO: GPS
 	}
 }
