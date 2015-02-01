@@ -108,21 +108,33 @@ module ApmHolder_Top()
 		}
 	}
 
+	// Mount holes
+	translate([0, 0, 2])
+	linear_extrude(2.4+11-2)
+	difference() {
+
+		// Mount supports
+		for (i = [0:1], j = [0:1])
+		mirror([i, 0, 0])
+		mirror([0, j, 0])
+		translate([-apmHolder_width / 2, -apmHolder_length / 2])
+			square([7, 7]);
+
+		// Mount holes
+		for (i = [0:1], j = [0:1])
+		mirror([i, 0, 0])
+		mirror([0, j, 0])
+		translate([apm_width / 2 - 2.5, apm_length / 2 - 2.5])
+			circle(d=3mmHoleDia);
+	
+	}
+
 	// Walls
 	linear_extrude(2.4+11)
 	difference() {
 		square([apmHolder_width, apmHolder_length], center=true);
 
-		difference() {
-			square([apmHolder_width - 4perim, apmHolder_length - 4perim], center=true);
-
-			// Mount supports
-			for (i = [0:1], j = [0:1])
-			mirror([i, 0, 0])
-			mirror([0, j, 0])
-			translate([-apmHolder_width / 2, -apmHolder_length / 2])
-				square([7, 7]);
-		}
+		square([apmHolder_width - 4perim, apmHolder_length - 4perim], center=true);
 				
 		// Mount holes
 		for (i = [0:1], j = [0:1])
@@ -151,6 +163,6 @@ module ApmHolder_Top()
 	linear_extrude(2.4+11-3.5)
 	difference() {
 		square([16, 16], center=true);
-		square([16-4Perim, 16-4Perim], center=true);
+		square([16-4Perim, 16 - 2*4Perim], center=true);
 	}
 }
