@@ -24,7 +24,17 @@ translate([0, 0, 21]) {
     TopPlate();
 	
 	translate([0, 0, 5]) {
-		apm();
+
+		translate([0, 0, 12.5]) {
+			ApmHolder();
+			translate([0, 0, 4.2])
+				ApmHolder_Top();
+
+			translate([0, 0, 4.5])
+				apm();
+
+			// TODO: GPS
+		}
 
 		translate([25, 0, 0]) {
 			fpvTransmitter();
@@ -37,8 +47,6 @@ translate([0, 0, 21]) {
 		rotate([0, 0, -90])
 		rotate([90, 0, 0])
 			3drRadio();
-
-        // TODO: GPS
 	}
 }
 
