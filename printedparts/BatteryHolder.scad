@@ -10,22 +10,22 @@ module BatteryHolderPlate()
 			union() {
 				/*for(i=[0, 1])
 				mirror([0, i, 0])
-				translate([-Battery_Width/2, -59, 0])
-					square([Battery_Width, 8]);*/
+				translate([-battery_width/2, -59, 0])
+					square([battery_width, 8]);*/
 
-				square([Battery_Width, Battery_Length-37], center=true);
+				square([battery_width, battery_length-37], center=true);
 
 				for (i=[0, 1])
 				mirror([0, i, 0])
 				translate([0, 25, 0])
-					square([Battery_Width + 22, 31], center=true);
+					square([battery_width + 22, 31], center=true);
 			}
 		
 			// Battery Velcro Slots
 			for (i=[0, 1], j=[0,1])
 			mirror([j ,0, 0])
 			mirror([0, i, 0])
-			translate([(Battery_Width + 20)/2 - 6, 25, 0])
+			translate([(battery_width + 20)/2 - 6, 25, 0])
 				square([7, 21], center=true);
 
 
@@ -43,12 +43,12 @@ module BatteryHolderPlate()
 			for (i=[0,1])
 			mirror([0, i, 0])
 			translate([0, -19])
-				square([Battery_Width-10, 14], center=true);
+				square([battery_width-10, 14], center=true);
 
 			translate([0, 39])
-				square([Battery_Width-10, 14], center=true);
+				square([battery_width-10, 14], center=true);
 			translate([0, -39])
-				square([Battery_Width-30, 14], center=true);
+				square([battery_width-30, 14], center=true);
 		}
 
 		// Leg mount hole nut insets
@@ -88,8 +88,8 @@ module BatteryHolderPlate()
 			rotate([90, 0, 0])
 				cylinder(r=90, h=8, $fn=200);
 
-			translate([-Battery_Width/2, -59, 5-eta])
-				cube([Battery_Width, 8, 5]);
+			translate([-battery_width/2, -59, 5-eta])
+				cube([battery_width, 8, 5]);
 		}
 
 		// Leg Mounting holes
