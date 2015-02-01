@@ -1,4 +1,4 @@
-apm_width = 41;
+apm_width = 40.5;
 apm_length = 66;
 
 Con_APM_FrontLeft = [ [-apm_width/2 + 2.5, -apm_length/2 + 2.5, 0], [0, 0, 1], 0, 0, 0 ];
