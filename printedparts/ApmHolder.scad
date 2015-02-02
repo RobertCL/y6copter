@@ -134,7 +134,7 @@ module ApmHolder_Top()
 	difference() {
 		square([apmHolder_width, apmHolder_length], center=true);
 
-		square([apmHolder_width - 6perim, apmHolder_length - 6perim], center=true);
+		square([apmHolder_width - 3, apmHolder_length - 3], center=true);
 				
 		// Mount holes
 		for (i = [0:1], j = [0:1])
@@ -162,7 +162,7 @@ module ApmHolder_Top()
 	linear_extrude(2.4+5)
 	translate([-apmHolder_width/2, apmHolder_length/2, 0])
 	translate([0, -22])
-		square([3*Perim, 12]);
+		square([1.5, 12]);
 
 	// Barometer Cover
 	translate([-apm_width/2, apm_length/2, 3.5])
@@ -170,6 +170,6 @@ module ApmHolder_Top()
 	linear_extrude(2.4+11-3.5)
 	difference() {
 		square([16, 16], center=true);
-		square([16-4Perim, 16 - 2*4Perim], center=true);
+		square([16 - 2*4Perim, 16 - 2*4Perim], center=true);
 	}
 }
