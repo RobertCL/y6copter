@@ -13,22 +13,22 @@ foldedpc = folded ? 1 : anim_fold * $t;
 Arms_Assembly(foldedpc);
 
 translate([0,0,-5]) {
-    BasePlate();
+    render() BasePlate();
 
     translate([rcReceiver_width/2, 75, 5])
 	rotate([0, 0, 180])
 		rcReceiver();
 }
 
-translate([0, 0, 21]) {
-    TopPlate();
+translate([0, 0, 21]) {
+    render() TopPlate();
 	
 	translate([0, 0, 5]) {
 
 		translate([0, 0, 12.5]) {
-			ApmHolder();
+			render() ApmHolder();
 			translate([0, 0, 4.2])
-				ApmHolder_Top();
+				render() ApmHolder_Top();
 
 			translate([0, 0, 4.5])
 				apm();
@@ -53,11 +53,11 @@ translate([0, 0, 21]) {
 // Legs
 translate([0, -51, -8])
 rotate([90, 0, 0])
-    Leg();
+    render() Leg();
 
 translate([0, 59, -8])
 rotate([90, 0, 0])
-    Leg();
+    render() Leg();
 
 // Leg Dowels
 color(WoodColor)
@@ -69,7 +69,7 @@ rotate([90, 0, 0])
 
 // Battery Holder
 translate([0,0,-21])
-    BatteryHolderPlate();
+    render() BatteryHolderPlate();
 
 translate([25/2, -47+15+3, 11-21])
 rotate([0, 180, 0])
