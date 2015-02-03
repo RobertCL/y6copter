@@ -29,7 +29,7 @@ translate([0, 0, 21+5]) {
 			minimOsd();
 		}
 		
-	translate([-30, 30, 0])
+	translate([-25-4Perim-.25, 42-4Perim-.25, 1])
 	rotate([0, 0, -90])
 	rotate([90, 0, 0])
 		3drRadio();

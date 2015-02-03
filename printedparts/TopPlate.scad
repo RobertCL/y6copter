@@ -82,4 +82,9 @@ module TopPlate()
 			cylinder(d=14.5, h=2.5);
 
 	}
+
+	// RCTimer Air Module Mount
+	translate([-25, 42, 5])
+	rotate([0, 0, 180])
+		RcTimerAirModuleHolder_Base();
 }
