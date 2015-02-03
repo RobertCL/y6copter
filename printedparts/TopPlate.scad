@@ -73,5 +73,13 @@ module TopPlate()
 		// Rear outer hole
 		translate([0, -TopPlateBackArmLength, 3])
 			cylinder(d=6, h=2+eta);
+
+		// Antivibration holes
+		for (i=[0, 1], j=[0, 1])
+		mirror([i, 0, 0])
+		mirror([0, j, 0])
+		translate([-apmHolder_width/2 + 6.5, -apmHolder_length/2 - 6.5], -eta)
+			cylinder(d=14.5, h=2.5);
+
 	}
 }
