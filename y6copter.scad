@@ -20,7 +20,8 @@ translate([0,0,-5]) {
 		rcReceiver();
 }
 
-translate([0, 0, 21]) {
+translate([0, 0, 21]) {
+
     render() TopPlate();
 	
 	translate([0, 0, 5]) {
@@ -43,7 +44,7 @@ translate([0, 0, 21]) {
 				minimOsd();
 		}
 		
-		translate([-30, 30, 0])
+		translate([-25-4Perim-.25, 42-4Perim-.25, 1])
 		rotate([0, 0, -90])
 		rotate([90, 0, 0])
 			3drRadio();

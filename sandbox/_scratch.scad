@@ -1,8 +1,10 @@
 include <../config/config.scad>
 
 
-RcTimerAirModuleHolder_Base();
+*RcTimerAirModuleHolder_Base();
 
-translate([0,0,10])
-//rotate([180,0,0])
+
+color(Level2PlasticColor)
+//translate([-2Perim,0,10])
+rotate([180,0,0])
 	RcTimerAirModuleHolder_Lid();

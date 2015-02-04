@@ -1,19 +1,19 @@
 include <../config/config.scad>
 
-translate([0,0,-5])
+*translate([0,0,-5])
     BasePlate();
 
-Arms_Assembly(0);
+*Arms_Assembly(0);
 
 translate([0,0,21])
     TopPlate();
 
 
-translate([rcReceiver_width/2, 75, 0])
+*translate([rcReceiver_width/2, 75, 0])
 rotate([0, 0, 180])
 	rcReceiver();
 
-translate([0, 0, 21+5]) {
+*translate([0, 0, 21+5]) {
         translate([0, 0, 12.5]) {
             ApmHolder();
             translate([0, 0, 4])

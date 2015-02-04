@@ -6,14 +6,14 @@ rcTimer_l=35.5;
 module RcTimerAirModuleHolder_Base()
 {
 
-	linear_extrude(1){
+	linear_extrude(3.5){
 		square([rcTimer_w+4Perim, 4Perim+3]);
 
 		translate([0, 27 + 4Perim, 0])
 			square([rcTimer_w+4Perim, 3]);
 	}
 
-	linear_extrude(7)
+	linear_extrude(9.5)
 	difference() {
 		square([rcTimer_w+2*4Perim, rcTimer_l+2*4perim+4]);
 
@@ -24,8 +24,10 @@ module RcTimerAirModuleHolder_Base()
 		// Antenna Exit
 		translate([4Perim, rcTimer_l+4Perim, 0]) {
 			square([7.5, 1.8]);
-			translate([1, 0, 0])
-				square([5.5, 4+4Perim+eta]);
+			translate([0.5, 0, 0])
+				square([6.5, 4+4Perim+eta]);
+			translate([-4Perim, 3.5, 0])
+				square([10.5, 5]);
 		}
 
 		// Serial Connector
@@ -40,31 +42,48 @@ module RcTimerAirModuleHolder_Base()
 
 module RcTimerAirModuleHolder_Lid()
 {
-	// Module board size plus .5mm
-	rcTimer_w=17.5;
-	l=35.5;
-
 	linear_extrude(2)
 	difference() {
-		square([rcTimer_w+2*4Perim, l+2*4perim+4]);
+		square([rcTimer_w + 3 * 4Perim, rcTimer_l + 2 * 4perim + 4]);
 		
 		// Lid screw hole
-		translate([2*4Perim + rcTimer_w - 5, 4+2*4Perim+l - 2.7])
-			circle(d=3mmDiaHole); // tight 3mm hole
+		translate([2Perim + 2*4Perim + rcTimer_w - 5, 4 + 2 * 4Perim + rcTimer_l - 2.7])
+			circle(d=3mmHoleDia);
 
 		// LED's
-		translate([4Perim + 11, 4Perim + 13.5, 0])
+		translate([2Perim + 4Perim + 11, 4Perim + 13.5, 0])
 			square([4, 4]);
+
+		// Antenna Exit
+		translate([4Perim, rcTimer_l + 4Perim, 0]) {
+			translate([-4Perim, 3.5, 0])
+				square([2Perim+10.5, 5]);
+		}
 	}
 
+	// Inside protrusion
 	translate([0,0,-0.6])
 	linear_extrude(0.6) 
 	difference() {
-		translate([4Perim + .5, 4Perim + .5, 0])
-			square([rcTimer_w - 1, l -1]);
+		translate([2Perim + 4Perim + .4, 4Perim + .4, 0])
+			square([rcTimer_w - .8, rcTimer_l - .8]);
 
 		// LED's
-		translate([4Perim + 11, 4Perim + 13.5, 0])
+		translate([2Perim + 4Perim + 11, 4Perim + 13.5, 0])
 			square([4, 4]);
+	}
+
+	// Side clip walls
+	translate([0,0,-3])
+	linear_extrude(3) 
+	difference() {
+		square([rcTimer_w + 3 * 4Perim, rcTimer_l + 2 * 4perim + 4]);
+
+		translate([2Perim, -eta, 0])
+			square([rcTimer_w + 2 * 4Perim, rcTimer_l + 2 * 4perim + 4 +eta]);
+
+		translate([4Perim, rcTimer_l + 4Perim, 0])
+			translate([-4Perim, 3.5, 0])
+				square([2Perim+10.5, 5]);
 	}
 }

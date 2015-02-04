@@ -56,6 +56,28 @@ module TopPlate()
 			mirror([0, j, 0])
 			translate([-apmHolder_width/2 + 6.5, -apmHolder_length/2 - 6.5], 0)
 				circle(d=9);
+
+			// Weight saving / random zip tie connection points
+			for (i=[0,1])
+			mirror([i, 0, 0]) {
+				// Rear points
+				translate([ArmDia/2 + 6, -BasePlateBackArmLength + 70, 0])
+					square([3, BasePlateBackArmLength - 80]);
+				translate([ArmDia/2 + 16, -BasePlateBackArmLength + 75, 0])
+					square([3, BasePlateBackArmLength - 80]);
+				translate([ArmDia/2 + 26, -BasePlateBackArmLength + 90, 0])
+					square([3, BasePlateBackArmLength - 90]);
+
+				// Front points
+				translate([ArmDia/2 - 4, 54, 0])
+					square([3, 24]);
+				translate([ArmDia/2 + 6, 50, 0])
+					square([3, 20]);
+				translate([ArmDia/2 + 16, 43, 0])
+					square([3, 20]);
+				translate([ArmDia/2 + 26, 43, 0])
+					square([3, 10]);
+			}
 		}
 
 		// Hole insets
@@ -84,7 +106,7 @@ module TopPlate()
 	}
 
 	// RCTimer Air Module Mount
-	translate([-25, 42, 5])
+	translate([-25, 43, 5])
 	rotate([0, 0, 180])
 		RcTimerAirModuleHolder_Base();
 }
