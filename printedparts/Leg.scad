@@ -41,6 +41,6 @@ module Leg()
 	translate([ri + rd/2, -ro, 0])
 	difference() {
 		circle(d=16);
-		circle(d=10);
+		circle(d=9);
 	}
 }
