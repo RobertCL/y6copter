@@ -11,11 +11,15 @@ module BatteryHolderPlate()
 				translate([-battery_width/2, -59, 0])
 					square([battery_width, 8]);*/
 
-				square([battery_width, battery_length-37], center=true);
+				square([battery_width, battery_length+20], center=true);
 
+				// Battery slot ears
 				for (i=[0, 1])
 				mirror([0, i, 0])
 				translate([0, 25, 0])
+					square([battery_width + 22, 31], center=true);
+				// Rear battery ears
+				translate([0, -78, 0])
 					square([battery_width + 22, 31], center=true);
 			}
 		
@@ -24,6 +28,12 @@ module BatteryHolderPlate()
 			mirror([j ,0, 0])
 			mirror([0, i, 0])
 			translate([(battery_width + 20)/2 - 6, 25, 0])
+				square([7, 21], center=true);
+
+			// Additional Rear slots
+			for (j=[0,1])
+			mirror([j ,0, 0])
+			translate([(battery_width + 20)/2 - 6, -78, 0])
 				square([7, 21], center=true);
 
 
@@ -47,6 +57,14 @@ module BatteryHolderPlate()
 				square([battery_width-10, 14], center=true);
 			translate([0, -39])
 				square([battery_width-30, 14], center=true);
+
+			*translate([0, 70])
+				square([battery_width-10, 14], center=true);
+
+			translate([0, -71])
+				square([battery_width-10, 10], center=true);
+			translate([0, -85])
+				square([battery_width-10, 10], center=true);
 		}
 
 		// Leg mount hole nut insets
