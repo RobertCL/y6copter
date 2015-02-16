@@ -1,7 +1,8 @@
 include <../config/config.scad>
+
+OtherParts=true;
 
-OtherParts=true;
-
+color(Level2PlasticColor)
 BatteryHolderPlate();
 
 if (OtherParts) {
