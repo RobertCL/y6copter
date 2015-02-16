@@ -1,5 +1,3 @@
-BasePlateFrontArmLength = 60;
-BasePlateBackArmLength = 100;
 
 module BatteryHolderPlate()
 {
