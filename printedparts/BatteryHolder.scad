@@ -6,12 +6,10 @@ module BatteryHolderPlate()
 		linear_extrude(5)
 		difference() {
 			union() {
-				/*for(i=[0, 1])
-				mirror([0, i, 0])
-				translate([-battery_width/2, -59, 0])
-					square([battery_width, 8]);*/
-
-				square([battery_width, battery_length+20], center=true);
+				translate([-battery_width/2, -battery_length/2 - 10])
+					square([battery_width, battery_length-8.5]);
+				translate([-20, battery_length/2 - 20])
+					square([40, 40]);
 
 				// Battery slot ears
 				for (i=[0, 1])
@@ -47,6 +45,14 @@ module BatteryHolderPlate()
 			// Central Hole
 			circle(r=8);
 
+			// Gimbal mount holes
+			translate([0, battery_length/2 + 20 - 5 - 10])
+			for (i=[0, 1], j=[0, 1])
+			mirror([i, 0, 0])
+			mirror([0, j, 0])
+			translate([-15, -10])
+				circle(d=3mmHoleDia);
+
 			// Weight loss cutouts
 			for (i=[0,1])
 			mirror([0, i, 0])
@@ -58,8 +64,8 @@ module BatteryHolderPlate()
 			translate([0, -39])
 				square([battery_width-30, 14], center=true);
 
-			*translate([0, 70])
-				square([battery_width-10, 14], center=true);
+			translate([0, 74])
+				square([battery_width-26, 26], center=true);
 
 			translate([0, -71])
 				square([battery_width-10, 10], center=true);
