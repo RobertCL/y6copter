@@ -34,13 +34,30 @@ translate([0, 0, 21]) {
 			translate([0, 0, 4.5])
 				apm();
 
-			// TODO: GPS
+			translate([0, 0, 17.5]) {
+				color(Level2PlasticColor)
+				translate([2.8, -.8, 0])
+					GpsLowerPlate();
+    
+				color(Level2PlasticColor)
+				translate([2.8, -.8, 3.5+2.5+2])
+					GpsUpperPlate();
+			}
 		}
 
-		translate([25, 0, 0]) {
-			fpvTransmitter();
+		translate([56, 44, 0]) {
+			color(Level2PlasticColor)
+			rotate([0, 0, 180]) {
+				MinimFpvHolder();
 
-			translate([0, 0, 17])
+				translate([-2Perim, -2Perim, 20])
+					Minim_Lid();
+			}
+
+			*fpvTransmitter();
+			
+			translate([-10, -46, 19])
+			rotate([0, 90, 0])
 				minimOsd();
 		}
 		
@@ -48,6 +65,12 @@ translate([0, 0, 21]) {
 		rotate([0, 0, -90])
 		rotate([90, 0, 0])
 			3drRadio();
+
+		translate([-25+2Perim, 42+2Perim, 9])
+		rotate([0, 0, -180])
+			RcTimerAirModuleHolder_Lid();
+
+			
 	}
 }
 
@@ -77,6 +100,6 @@ rotate([0, 180, 0])
 rotate([0, 0, -90])
     powerModule();
 
-translate([0,0,-37])
+translate([0, -30, -37])
 rotate(a=90, v=[0,0,1])
 	battery();
