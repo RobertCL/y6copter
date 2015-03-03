@@ -50,7 +50,7 @@ translate([0, 0, 21]) {
 			rotate([0, 0, 180]) {
 				MinimFpvHolder();
 
-				translate([-2Perim, -2Perim, 20])
+				translate([-2Perim, -2Perim, 30])
 					Minim_Lid();
 			}
 

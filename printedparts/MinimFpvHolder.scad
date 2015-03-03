@@ -30,7 +30,7 @@ module MinimFpvHolder()
 	}
 
 	// Main walls
-	linear_extrude(20)
+	linear_extrude(30)
 	difference() {
 		square([box_outer_w, box_outer_l]);
 
@@ -75,7 +75,7 @@ module MinimFpvHolder()
 	}
 
 	// Lid screw in point
-	linear_extrude(20)
+	linear_extrude(30)
 	translate([4Perim, 4Perim + 5])
 	difference() {
 		square([4, 9]);
@@ -88,32 +88,55 @@ module MinimFpvHolder()
 
 module Minim_Lid()
 {
+	minim_w = 11;
+	fpv_w = 14;
+
 	linear_extrude(2)
 	difference() {
-		square([2Perim + 2 * 4Perim + 11, 45 + 3 * 4Perim]);
+		square([2 * 2Perim + 3 * 4Perim + minim_w + fpv_w, 45 + 3 * 4Perim]);
 
 		// Lid screw in point
 		translate([2Perim + 4Perim, 2Perim + 4Perim + 5])
 		translate([1.6, 4.5])
 			circle(d=3mmHoleDia);
 
-		// Ventilation
-		translate([2Perim + 4Perim + 1, 2Perim + 4Perim + 16]) 
+		// Minim Ventilation
+		translate([2Perim + 4Perim + 1, 2Perim + 4Perim + 16])
 		for (i=[0:6])
-		translate([0, i * 4])
+		translate([0, 1+i * 4])
 			square([9, 2]);
+
+		// Fpv cutouts
+		translate([2Perim + 2*4Perim + minim_w, 2Perim + 4Perim]) {
+			// Button
+			translate([5, 19])
+				square([7, 7]);
+
+			// Ventilation
+			for (i=[0:3])
+			translate([1, 1 + i * 4])
+				square([11, 2]);
+			for (i=[0:3])
+			translate([1, 1 + 28 + i * 4])
+				square([11, 2]);
+		}
 	}
 
 	translate([0, 0, -3])
 	linear_extrude(3)
 	difference() {
-		square([2Perim + 2 * 4Perim + 11, 45 + 3 * 4Perim]);
+		square([2 * 2Perim + 3 * 4Perim + minim_w + fpv_w, 45 + 3 * 4Perim]);
 
 		translate([2Perim, 2Perim])
-			square([2 * 4Perim + 11, 45 + 2 * 4Perim]);
+			square([3 * 4Perim + minim_w + fpv_w, 45 + 2 * 4Perim]);
 
 		// Telemetry Input Cutout
-		translate([2Perim + 4Perim + 11 - 5.5 - 3,  2Perim + 2 * 4Perim + 45])
-			square([3, 2Perim+eta]);
+		//translate([2Perim + 4Perim + minim_w - 5.5 - 3,  2Perim + 2 * 4Perim + 45])
+		//	square([3, 2Perim+eta]);
+
+		// Fpv Camera Input Cutout
+		translate([2Perim + 2*4Perim + minim_w, 0])
+		translate([2.5, -eta])
+			square([7, 2Perim+eta]);
 	}
 }

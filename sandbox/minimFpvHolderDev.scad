@@ -3,9 +3,9 @@ include <../config/config.scad>
 MinimFpvHolder();
 
 color(Level2PlasticColor)
-translate([-2Perim, -2Perim, 20])
+translate([-2Perim, -2Perim, 30])
     Minim_Lid();
     
-    
-*rotate([180, 0, 0])
+translate([-40, 0, 0])
+rotate([180, 0, 0])
     Minim_Lid();
